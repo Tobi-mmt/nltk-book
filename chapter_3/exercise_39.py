@@ -43,7 +43,7 @@ def replace_consonants(letter):
     return ''
 
 
-string = "Robert Ashcraft and Rupert Tymczak and Rubin Pfister"
+string = "Pfister"
 names = word_tokenize(string)
 for name in names:
     print(name, soundex(name))
