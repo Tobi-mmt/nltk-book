@@ -1,6 +1,6 @@
 # nltk-book
 
-Theese are my Solutens for the exercieses in the [NLTK Book](http://www.nltk.org/book/)
+These are my solutens for the exercises in the [NLTK Book](http://www.nltk.org/book/)
 
 ### Requirements ###
 
