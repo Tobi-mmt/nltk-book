@@ -1,6 +1,6 @@
 # nltk-book
 
-These are my solutens for the exercises in the [NLTK Book](http://www.nltk.org/book/)
+These are my solutions for the exercises in the [NLTK Book](http://www.nltk.org/book/)
 
 ### Requirements ###
 
