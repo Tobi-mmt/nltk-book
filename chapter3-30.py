@@ -15,6 +15,7 @@ porter_stem = [porter.stem(t) for t in tokens]
 lancaster_stem = [lancaster.stem(t) for t in tokens]
 
 print('Original \t Porter \t Lancaster')
+
 for i, t in enumerate(tokens):
     if str(porter_stem[i]) != str(lancaster_stem[i]):
         print(t, '\t ', porter_stem[i], '\t ', lancaster_stem[i])

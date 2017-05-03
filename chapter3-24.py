@@ -10,20 +10,20 @@ import nltk, re
 def hacker(text):
     text = text.lower()
     hacker_dict = {
+        'ate': '8',
         'e': '3',
         'i': '1',
         'o': '0',
         'l': '|',
         's': '5',
-        '.': '5w33t!',
-        'ate': '8'
+        '.': '5w33t!'
     }
     for el in hacker_dict.keys():
         if el is 's':
-            text = re.sub(r'^s', '$', text)
+            text = re.sub(r'(^s|\ss)', ' $', text)
         text = text.replace(el, hacker_dict[el])
     return text
 
 
-user_input = input('Text eingeben: ')
+user_input = input('Enter text: ')
 print(hacker(user_input))

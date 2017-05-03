@@ -6,7 +6,7 @@
 
 import nltk
 from nltk.corpus import wordnet as wn
-user_input = 'canadian'
+user_input = 'american'
 
 
 def nounify(adj_word):

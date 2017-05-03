@@ -16,13 +16,13 @@ def unknown(url):
         script.decompose()  # clean from script and style tags
     raw_clean = raw_clean.get_text()
     tokens = nltk.word_tokenize(raw_clean)
-    raw_list = [w for w in tokens if re.search('^\w+$', w)]
+    raw_list = [w for w in tokens if re.findall(r'^\w+$', w)]
     known_words = nltk.corpus.words.words()
     unknown_words = [w.lower() for w in raw_list if w not in known_words]
     return set(unknown_words)
 
-user_iput = input('Website eingeben, z.B. haribo.de: ')
-url = "http://www." + user_iput
+user_input = input('Enter Website, like haribo.de: ')
+url = "http://www." + user_input
 
 words = unknown(url)
-print('{} Unbekannt Worte auf der Website {}: {}.'.format(len(words), user_iput, words))
+print('{} unknown words on {}: {}.'.format(len(words), user_input, words))

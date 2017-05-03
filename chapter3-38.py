@@ -9,7 +9,7 @@ from nltk.corpus import wordnet as wn
 
 
 def remove_line_break(word):
-    word_match = re.match(r'\w+-\n\w+', text)
+    word_match = re.search(r'\w+-\n\w+', text)
     if word_match.string:
         w_one_liner = str(word.replace('\n', ''))
         w_without_hyphen =str(word.replace('-\n', ''))
