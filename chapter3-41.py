@@ -3,12 +3,11 @@
 # -----------------
 # 41 list in nested loop
 # -----------------
-import re
 
 words = ['attribution', 'confabulation', 'elocution',
          'sequoia', 'tenacious', 'unidirectional']
-for i, word in enumerate(words):
-    words[i] = re.sub(r'[^aeiou]', '', word)
 
-print('My result: ', sorted(words))
+s = sorted(set([''.join([c for c in w if c in 'aeiou']) for w in words]))
+
+print('My result: ', sorted(s))
 print('Solution: ', ['aiuio', 'eaiou', 'eouio', 'euoia', 'oauaio', 'uiieioa'])

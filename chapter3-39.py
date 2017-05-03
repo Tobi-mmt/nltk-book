@@ -4,8 +4,7 @@
 # 39 Soundex
 # -----------------
 
-import nltk, re
-from nltk.corpus import wordnet as wn
+import re
 from nltk import word_tokenize
 
 representation = {
@@ -20,14 +19,18 @@ representation = {
 
 def soundex(word):
     str_word = str(word)
-    output = str_word[0]  # copy first letter
+    output = str_word[0].upper()
 
     for letter in str_word[1:]:
         number = replace_consonants(letter)
         if output[-1] != number:
             output += number
+
+    first_in_dict = replace_consonants(str_word[0])
+    if str(first_in_dict) in '123456':
+        output = output[0] + output[2:] if output[1] == str(first_in_dict) else output
     output += '000'
-    output = re.sub('#', '', output)
+    output = re.sub(r'#', '', output)
     return output[:4]
 
 
@@ -38,6 +41,7 @@ def replace_consonants(letter):
         elif letter.upper() in 'AEIOU':
             return '#'
     return ''
+
 
 string = "Robert Ashcraft and Rupert Tymczak and Rubin Pfister"
 names = word_tokenize(string)
