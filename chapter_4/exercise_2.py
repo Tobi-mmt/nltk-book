@@ -5,3 +5,21 @@
 ##################
 # 2 - three operations that can be performed on both tuples and lists
 ##################
+love_list = ['love', 'out', 'loud']
+love_tuple = ('love', 'out', 'loud')
+
+# operators for list AND tuples
+
+len(love_list)
+len(love_tuple)
+
+set(love_list)
+set(love_tuple)
+
+reversed(love_list)
+reversed(love_tuple)
+
+# only list
+
+
+
