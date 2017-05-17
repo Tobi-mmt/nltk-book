@@ -9,7 +9,13 @@ sent = ['Take', 'care', 'of', 'the', 'sense', ',', 'and', 'the', 'sounds', 'will
 
 
 def word_vowels(word_list):
-    return [[len(word), len([v for v in word if v in 'aeiou'])] for word in word_list]
+    results = []
+    v = [[len(word), len([v for v in word if v in 'aeiou']), word] for word in word_list]
+    for leng, vowel, word in v:
+        print(leng)
+        print(vowel)
+        results.append([leng][vowel], word)
+    return results
 
 
 print(word_vowels(sent))

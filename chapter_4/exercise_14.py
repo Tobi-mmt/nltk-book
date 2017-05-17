@@ -10,7 +10,7 @@
 
 def novel10(text):
     len_9 = int(len(text) * 0.9)
-    print(set(text[:len_9]).difference(set(text[len_9:])))
+    print(set(text[len_9:]).difference(set(text[:len_9])))
 
 
 test = ['hello', 'this', 'is', 'my', 'test', 'so', 'far', 'so', 'good', 'yeah', 'yeah']

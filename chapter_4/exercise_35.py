@@ -31,7 +31,6 @@ def solve_crossword(n, corpus):
                 letter += crossword[j][i]
             new = find_word(n, corpus, letter)
             crossword.append(new)
-        print([w for w in crossword])
         return crossword
     except:
         return None
@@ -41,3 +40,6 @@ word_corpus = nltk.corpus.words.words('en')
 result = None
 while not result:
     result = solve_crossword(num, word_corpus)
+
+for w in result:
+    print(w)

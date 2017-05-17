@@ -35,5 +35,6 @@ insert(trie, 'tree', 'In botany, a tree is a perennial plant with an elongated s
 insert(trie, 'red', 'Red is the color at the longer-wavelengths end of the spectrum of visible light next to orange, at the opposite end from violet.')
 
 trie = dict(trie)
+print(trie)
 search_key = input('enter search key: ')
 print('Definition of "{}": {}'.format(search_key, lookup(trie, search_key)))

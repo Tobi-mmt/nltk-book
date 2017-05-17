@@ -17,11 +17,12 @@ def shorten(text, n):
     if isinstance(text, str):
         text = word_tokenize(text)
     count = collections.Counter(text)
-    return count.most_common(n)
+    common = [c for c, _ in count.most_common(n)]
+    return ' '.join([w for w in text if w.lower() not in common])
 
 
 words = brown.words(categories='news')
-string = 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia'
+string = 'Far far away, behind the word mountains, far '
 
 print(shorten(words, 8))
-print(shorten(string, 8))
+print(shorten(string, 1))

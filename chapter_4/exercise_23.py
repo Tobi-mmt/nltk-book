@@ -21,21 +21,25 @@ def insert(trie, key, value):
         trie['value'] = value
 
 
-def lookup(trie, key):
+def lookup(trie, key, ori=True):
     if key:
         first, rest = key[0], key[1:]
         if first not in trie:
             return 'no result'
-        return lookup(trie[first], rest)
+        return lookup(trie[first], rest, ori)
     else:
-        try:
-            return trie['value']
-        except:
-            return lookup(trie, next(iter(trie)))
+        if 'value' in trie:
+            if ori or ( not ori and len(trie.keys()) == 1):
+                return trie['value']
+            return 'too many results'
+        else:
+            if len(trie.keys()) == 1:
+                return lookup(trie, next(iter(trie)), ori=False)
+            return 'no result'
 
 trie = {}
-insert(trie, 'chat', 'cat')
-insert(trie, 'hello', 'world')
+insert(trie, 'cha', 'cat')
+insert(trie, 'charlotte', 'world')
 insert(trie, 'head', 'cap')
 insert(trie, 'tree', 'leaf')
 insert(trie, 'red', 'blue')
